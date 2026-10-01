@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FITYAN Academy | Character, Skills & Growth</title>
+<meta name="description" content="FITYAN Academy provides engaging Islamic character-building, life-skills and youth development programs, workshops and customized learning experiences.">
+<style>
+:root{
+  --blue:#004AAD;
+  --deep:#002F73;
+  --mid:#0A5CC4;
+  --orange:#FF914D;
+  --orange2:#FF914D;
+  --cream:#fff8f1;
+  --light:#eef5fb;
+  --text:#243342;
+  --muted:#657586;
+  --white:#fff;
+  --line:#dce6ef;
+  --shadow:0 18px 45px rgba(8,38,70,.10);
+  --radius:22px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.65}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--deep)}
+.logo-mark{width:45px;height:45px;position:relative;display:grid;place-items:center}
+.logo-mark:before,.logo-mark:after{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--blue);transform:rotate(45deg)}
+.logo-mark:after{border-color:var(--orange);width:20px;height:20px}
+
+.brand-logo{width:82px;height:58px;object-fit:contain;display:block}
+.brand-name{font-size:19px;letter-spacing:.4px}
+.brand-name small{display:block;color:var(--orange);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700}
+.navlinks a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 9px 22px rgba(238,126,37,.24)}
+.btn-primary:hover{transform:translateY(-2px);background:#dc6f1a}
+.btn-outline{border-color:var(--blue);color:var(--blue);background:#fff}
+.btn-outline:hover{background:var(--light)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--deep),var(--blue));color:#fff;padding:92px 0 88px}
+.hero:after{content:"";position:absolute;width:520px;height:520px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-170px;top:-210px;box-shadow:0 0 0 35px rgba(255,255,255,.035),0 0 0 70px rgba(255,255,255,.025)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;color:#FFE1D0;background:rgba(238,126,37,.16);border:1px solid rgba(245,154,75,.35);padding:7px 12px;border-radius:999px;font-weight:800;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+.hero h1{font-size:clamp(44px,6vw,76px);line-height:1.02;margin:18px 0 22px;letter-spacing:-2.5px}
+.hero h1 span{color:#FF914D}
+.hero p{font-size:19px;max-width:700px;color:#e8f1fa}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero .btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.16)}
+.hero-card h3{margin:0 0 15px;font-size:22px}
+.hero-card ul{padding:0;margin:0;list-style:none}
+.hero-card li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-card li:last-child{border-bottom:0}
+.hero-card b{color:#FF914D}
+section{padding:82px 0}
+.section-head{max-width:760px;margin:0 auto 42px;text-align:center}
+.kicker{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.section-head h2{color:var(--deep);font-size:40px;line-height:1.12;margin:8px 0 13px;letter-spacing:-1px}
+.section-head p{color:var(--muted);font-size:17px}
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}
+.panel h3{color:var(--blue);margin-top:0;font-size:24px}
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+.value{padding:17px;border-radius:16px;background:var(--cream);border-left:4px solid var(--orange)}
+.value strong{display:block;color:var(--blue)}
+.programs{background:#fff}
+.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.filter{border:1px solid var(--line);background:#fff;color:var(--blue);padding:9px 15px;border-radius:999px;font-weight:800;cursor:pointer}
+.filter.active,.filter:hover{background:var(--blue);color:#fff}
+.program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.program{border:1px solid var(--line);border-radius:20px;padding:23px;background:#fff;transition:.2s;display:flex;flex-direction:column}
+.program:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#bfd4e7}
+.program .tag{font-size:11px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:var(--orange);margin-bottom:9px}
+.program h3{margin:0 0 10px;color:var(--deep);font-size:20px;line-height:1.25}
+.program p{margin:0 0 17px;color:var(--muted);font-size:14px;flex:1}
+.program .mini{font-size:12px;color:var(--blue);font-weight:800;margin-bottom:14px}
+.program .btn{width:100%}
+.feature{background:linear-gradient(135deg,var(--cream),#fff)}
+.feature-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}
+.feature-box{background:var(--deep);color:#fff;border-radius:28px;padding:34px;position:relative;overflow:hidden}
+.feature-box:before,.feature-box:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.12);transform:rotate(45deg)}
+.feature-box:before{width:150px;height:150px;right:-60px;top:-60px}
+.feature-box:after{width:90px;height:90px;left:-40px;bottom:-35px}
+.feature-box h3{font-size:30px;margin-top:0}
+.feature-box span{color:#FF914D}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.list-item{padding:15px 17px;border-radius:15px;background:#fff;border:1px solid var(--line);font-weight:700}
+.list-item:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:10px}
+.custom{background:var(--light)}
+.custom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.request-card{background:#fff;border-radius:20px;padding:24px;border:1px solid var(--line)}
+.request-card h3{color:var(--blue);margin-top:0}
+.register{background:linear-gradient(135deg,var(--blue),var(--deep));color:#fff;text-align:center}
+.register .section-head h2{color:#fff}
+.register .section-head p{color:#dce8f4}
+.register-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.faq{background:#fff}
+.faq-grid{max-width:850px;margin:auto}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:800;color:var(--blue);font-size:17px}
+details p{color:var(--muted);margin:12px 0 0}
+footer{background:#061d35;color:#d8e4ef;padding:45px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:35px}
+footer h3{color:#fff;margin-top:0}
+footer a{color:#d8e4ef}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:20px;font-size:13px;color:#9fb1c3;display:flex;justify-content:space-between;gap:15px}
+.mobile{display:none}
+@media(max-width:900px){
+  .navlinks{display:none}.mobile{display:block}
+  .hero-grid,.about-grid,.feature-grid{grid-template-columns:1fr}
+  .program-grid{grid-template-columns:repeat(2,1fr)}
+  .custom-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  section{padding:60px 0}.hero{padding:70px 0}.hero h1{font-size:46px}
+  .program-grid,.custom-grid,.list,.values{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .nav{height:68px}.brand-logo{width:68px;height:50px}.brand-name{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="FITYAN Academy home">
+      <img class="brand-logo" src="FITYAN-logo.png" alt="FITYAN Academy logo">
+      <div class="brand-name">FITYAN ACADEMY<small>Youth • Character • Growth</small></div>
+    </a>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#custom">Custom Programs</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+    </nav>
+    <a class="btn btn-primary mobile" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">FITYAN ACADEMY</div>
+      <h1>Building <span>Character.</span><br>Growing Skills.<br>Shaping Futures.</h1>
+      <p>FITYAN Academy is a youth-focused educational initiative offering engaging Islamic character-building, life-skills and personal development programs for young people.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register for a Program</a>
+        <a class="btn btn-outline" href="#programs">Explore Programs</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Learning that connects with real life</h3>
+      <ul>
+        <li><b>Character Building</b><br>Values, ethics, confidence and responsible conduct.</li>
+        <li><b>Life Skills</b><br>Practical skills for communication, decision-making and everyday life.</li>
+        <li><b>Islamic Learning</b><br>Interactive learning grounded in authentic Islamic teachings.</li>
+        <li><b>Flexible Programs</b><br>Programs can be arranged according to participants' needs and requests.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">About FITYAN Academy</div>
+      <h2>Learning, Character & Purpose</h2>
+      <p>FITYAN is a youth-focused educational initiative dedicated to nurturing confident, knowledgeable and values-driven young people.</p>
+    </div>
+    <div class="about-grid">
+      <div class="panel">
+        <h3>Who We Are</h3>
+        <p>FITYAN provides engaging, interactive and practical learning experiences that combine authentic Islamic teachings with skills young people can apply in their everyday lives.</p>
+        <p>The Academy focuses on developing young people intellectually, socially, spiritually and practically through workshops, programs, discussions, activities and other learning experiences.</p>
+      </div>
+      <div class="panel">
+        <h3>Our Approach</h3>
+        <p>We believe young people learn best when they participate, ask questions, discuss real situations, reflect on their choices and practise what they learn.</p>
+        <div class="values">
+          <div class="value"><strong>Faith</strong>Learning rooted in Islamic values.</div>
+          <div class="value"><strong>Character</strong>Building good conduct and responsibility.</div>
+          <div class="value"><strong>Skills</strong>Developing practical abilities for life.</div>
+          <div class="value"><strong>Growth</strong>Encouraging confidence and continuous improvement.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="programs" class="programs">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Our Programs</div>
+      <h2>Explore FITYAN Academy Programs</h2>
+      <p>Our programs cover Islamic learning, character building, life skills, communication, creativity, digital skills and youth development.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All Programs</button>
+      <button class="filter" data-filter="islamic">Islamic Learning</button>
+      <button class="filter" data-filter="character">Character & Life Skills</button>
+      <button class="filter" data-filter="skills">Skills & Creativity</button>
+      <button class="filter" data-filter="youth">Youth Experiences</button>
+    </div>
+
+    <div class="program-grid" id="programGrid">
+      <article class="program" data-category="islamic">
+        <div class="tag">Islamic Learning</div><h3>Interactive Seerah Program</h3>
+        <p>Interactive learning around the life, guidance and lessons of the Prophet Muhammad ﷺ.</p>
+        <div class="mini">Interactive • Discussion • Reflection</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="islamic">
+        <div class="tag">Islamic Learning</div><h3>Salah Workshop</h3>
+        <p>A practical and engaging learning experience focused on understanding and improving Salah.</p>
+        <div class="mini">Faith • Practice • Reflection</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="character">
+        <div class="tag">Character Building</div><h3>Islamic Etiquette Workshop</h3>
+        <p>Exploring manners, respectful conduct and everyday etiquette through an Islamic perspective.</p>
+        <div class="mini">Akhlaq • Manners • Conduct</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="islamic">
+        <div class="tag">Islamic Learning</div><h3>Quran Contemplation Workshop</h3>
+        <p>Encouraging young people to engage with the Qur'an through reflection, meaning and practical application.</p>
+        <div class="mini">Qur'an • Reflection • Application</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="skills">
+        <div class="tag">Digital Skills</div><h3>Digital Literacy Workshop</h3>
+        <p>Developing responsible, practical and informed digital habits for today's young people.</p>
+        <div class="mini">Digital Skills • Safety • Responsibility</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="skills">
+        <div class="tag">Girls' Skills</div><h3>Girls Hand Skills</h3>
+        <p>Practical creative and hands-on learning designed to build useful skills, confidence and initiative.</p>
+        <div class="mini">Creativity • Practical Skills • Confidence</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="skills">
+        <div class="tag">Communication</div><h3>Public Speaking Workshop</h3>
+        <p>Helping young people communicate ideas clearly, confidently and respectfully.</p>
+        <div class="mini">Confidence • Speaking • Communication</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="skills">
+        <div class="tag">Creativity</div><h3>Creative Writing Workshop</h3>
+        <p>Developing creativity, expression, writing confidence and storytelling skills.</p>
+        <div class="mini">Writing • Creativity • Expression</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="character">
+        <div class="tag">Character & Life Skills</div><h3>The Morality Toolkit: Navigating Life the Prophetic Way</h3>
+        <p>Exploring practical moral decision-making and navigating everyday situations through Prophetic guidance.</p>
+        <div class="mini">Morality • Decision-Making • Prophetic Guidance</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="character">
+        <div class="tag">Character & Life Skills</div><h3>Love at First Sight: Ethics of Desires — Boys</h3>
+        <p>A guided discussion on emotions, attraction, boundaries, responsibility and Islamic ethics for boys.</p>
+        <div class="mini">Character • Ethics • Responsible Choices</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="character">
+        <div class="tag">Character & Life Skills</div><h3>Love at First Sight: Ethics of Desires — Girls</h3>
+        <p>A guided discussion on emotions, attraction, boundaries, responsibility and Islamic ethics for girls.</p>
+        <div class="mini">Character • Ethics • Responsible Choices</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="character">
+        <div class="tag">Character & Life Skills</div><h3>Islamic Mindfulness</h3>
+        <p>Exploring attentiveness, reflection, intentional living and spiritual awareness in a distracted world.</p>
+        <div class="mini">Mindfulness • Reflection • Spiritual Awareness</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+
+      <article class="program" data-category="youth">
+        <div class="tag">Youth Experiences</div><h3>Camps</h3>
+        <p>Engaging youth experiences combining learning, teamwork, activities, reflection and character development.</p>
+        <div class="mini">Teamwork • Activities • Growth</div>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="container feature-grid">
+    <div class="feature-box">
+      <h3>Not seeing the program you're looking for?</h3>
+      <p>FITYAN Academy also develops and conducts programs according to the needs, interests and requests of participants, schools, organizations and communities.</p>
+      <p><strong><span>Tell us what you need.</span></strong> We can explore a suitable learning experience.</p>
+    </div>
+    <div>
+      <div class="kicker">Flexible & Responsive</div>
+      <h2 style="font-size:38px;color:var(--deep);line-height:1.15">Programs can be shaped around your needs.</h2>
+      <p style="color:var(--muted);font-size:17px">The programs listed above are examples of FITYAN Academy's learning areas. We also conduct other programs related to life skills and youth development, and can develop additional topics according to requests.</p>
+      <div class="list">
+        <div class="list-item">Life Skills</div>
+        <div class="list-item">Character Building</div>
+        <div class="list-item">Communication Skills</div>
+        <div class="list-item">Leadership</div>
+        <div class="list-item">Study Skills</div>
+        <div class="list-item">Digital Literacy</div>
+        <div class="list-item">Islamic Learning</div>
+        <div class="list-item">Youth Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="custom" class="custom">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Beyond the Listed Programs</div>
+      <h2>Request a Program</h2>
+      <p>Have a particular need or topic in mind? FITYAN Academy can consider programs beyond the examples shown on this page.</p>
+    </div>
+    <div class="custom-grid">
+      <div class="request-card"><h3>For Schools</h3><p>Request workshops and learning experiences for students, teachers or school communities.</p></div>
+      <div class="request-card"><h3>For Organizations</h3><p>Request youth-focused programs, character-building sessions or practical life-skills workshops.</p></div>
+      <div class="request-card"><h3>For Youth Groups</h3><p>Request interactive sessions around Islamic learning, personal growth, communication, creativity or other needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker" style="color:#FF914D">Get Started</div>
+      <h2>Interested in a FITYAN Academy Program?</h2>
+      <p>Use the registration form to express your interest. You can select a listed program or share what kind of program you are looking for.</p>
+    </div>
+    <div class="register-actions">
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Open Registration Form</a>
+      <a class="btn btn-outline" href="#programs">View Programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Questions</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <details><summary>Are the programs only the ones listed here?</summary><p>No. The listed programs represent FITYAN Academy's current learning areas. We also conduct other programs related to life skills and youth development and can consider requests for additional topics.</p></details>
+      <details><summary>How long does a program take?</summary><p>Program duration is arranged according to the needs of the participants and the requirements of the program.</p></details>
+      <details><summary>Can a school or organization request a specific program?</summary><p>Yes. Schools, organizations, youth groups and other participants can use the registration form to communicate their needs or request a specific topic.</p></details>
+      <details><summary>How do I register?</summary><p>Click any Register button on this website. It will open the FITYAN Academy Google Form.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>FITYAN ACADEMY</h3>
+        <p>A youth-focused educational initiative dedicated to character, skills, Islamic learning and meaningful growth.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <p><a href="#about">About</a></p>
+        <p><a href="#programs">Programs</a></p>
+        <p><a href="#custom">Request a Program</a></p>
+      </div>
+      <div>
+        <h3>Contact & Registration</h3>
+        <p><a href="mailto:fityanedu@gmail.com">fityanedu@gmail.com</a></p>
+        <p><a href="https://wa.me/254723824177" target="_blank" rel="noopener">WhatsApp: +254 723 824 177</a></p>
+        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Google Registration Form</a></p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfCvr2fX_iKxUTFNJUK7TriKXapMAa5SXE46m604O9PXQksLw/viewform?usp=publish-editor" target="_blank">Register</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:14px;">
+      <a href="mailto:fityanedu@gmail.com">Email: fityanedu@gmail.com</a>
+      <a href="https://wa.me/254723824177" target="_blank" rel="noopener">WhatsApp: +254 723 824 177</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FITYAN Academy. All rights reserved.</span>
+      <span>Character • Skills • Growth</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const filters=document.querySelectorAll('.filter');
+const cards=document.querySelectorAll('.program');
+filters.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filters.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    cards.forEach(card=>{
+      card.style.display=(f==='all'||card.dataset.category===f)?'flex':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
